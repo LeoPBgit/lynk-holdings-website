@@ -1,0 +1,162 @@
+# Lynk Holdings - Project Intelligence
+
+## Project Context
+This is a financial investment portfolio management platform built with React/TypeScript frontend and Node.js/Express backend. The project is in the initialization phase with comprehensive documentation established.
+
+## Critical Implementation Paths
+
+### Memory Bank First Approach
+- ALWAYS read memory bank files before starting any work
+- Memory bank contains complete project context and current status
+- Update memory bank when significant changes or discoveries are made
+- Files are hierarchical: projectbrief.md → productContext.md → systemPatterns.md → techContext.md → activeContext.md → progress.md
+
+### Financial Domain Considerations
+- Security is paramount - financial data requires robust protection
+- Compliance requirements (GDPR, SOX) must be considered from start
+- Real-time data handling is critical for market data
+- Performance requirements are strict (API < 500ms, page load < 3s)
+- Audit trails and logging are essential for compliance
+
+### Technology Stack Decisions
+- React 18+ with TypeScript for frontend (type safety critical)
+- Node.js/Express with TypeScript for backend
+- PostgreSQL + TimescaleDB for time-series financial data
+- Redis for caching and session management
+- Material-UI for professional financial interface components
+
+## User Preferences and Workflow
+
+### Development Approach
+- Documentation-first development (memory bank system)
+- Security-first architecture decisions
+- TypeScript strict mode throughout
+- Comprehensive testing strategy (unit, integration, E2E)
+- Clean architecture with clear separation of concerns
+
+### Code Quality Standards
+- ESLint + Prettier for consistent formatting
+- Conventional commits for clear history
+- Code reviews required for all changes
+- Test coverage requirements for financial calculations
+- Performance monitoring from development phase
+
+## Project-Specific Patterns
+
+### Architecture Patterns
+- Layered architecture with microservices elements
+- Domain-driven design for business logic organization
+- RESTful APIs with GraphQL for complex queries
+- Event-driven architecture for real-time updates
+- Circuit breaker pattern for external API resilience
+
+### Data Patterns
+- Time-series data optimization for historical prices
+- Multi-level caching strategy (Redis, application, CDN)
+- Data validation at multiple layers
+- Audit logging for all financial transactions
+- Backup and recovery procedures for data integrity
+
+### Security Patterns
+- JWT with refresh tokens for authentication
+- Role-based access control (RBAC)
+- Input validation and sanitization at all entry points
+- Encryption at rest and in transit
+- Rate limiting and DDoS protection
+
+## Known Challenges
+
+### Technical Challenges
+- Real-time data synchronization across multiple users
+- Complex financial calculations requiring precision
+- Integration with multiple external data providers
+- Scalability for large portfolios and user bases
+- Performance optimization for data-heavy operations
+
+### Business Challenges
+- Regulatory compliance across different jurisdictions
+- User experience design for complex financial data
+- Data accuracy and reliability requirements
+- Competitive market with established players
+- User trust and security perception
+
+## Evolution of Project Decisions
+
+### Initial Decisions (Current Phase)
+- Chose React/TypeScript for type safety and ecosystem
+- Selected PostgreSQL for ACID compliance needs
+- Decided on comprehensive documentation approach
+- Established security-first development mindset
+
+### Future Decision Points
+- Microservices vs monolithic deployment strategy
+- Cloud provider selection (AWS/GCP/Azure)
+- Financial data provider selection and contracts
+- Scaling strategy as user base grows
+- Advanced analytics and ML integration
+
+## Tool Usage Patterns
+
+### Development Tools
+- VS Code with TypeScript, ESLint, Prettier extensions
+- Docker for consistent development environments
+- GitHub Actions for CI/CD pipeline
+- Jest + React Testing Library for testing
+- Swagger/OpenAPI for API documentation
+
+### Monitoring and Observability
+- Structured logging with correlation IDs
+- Performance monitoring from day one
+- Error tracking and alerting systems
+- User analytics for feature adoption
+- Security monitoring and audit trails
+
+## Key Learning Points
+
+### Financial Domain Insights
+- Financial users expect professional, clean interfaces
+- Data accuracy is more important than speed in many cases
+- Regulatory compliance affects every architectural decision
+- Users need comprehensive audit trails and reporting
+- Real-time updates are critical but must be reliable
+
+### Technical Insights
+- TypeScript strict mode catches many financial calculation errors
+- Time-series databases are essential for historical data
+- Caching strategies must consider data freshness requirements
+- Security cannot be added later - must be built in from start
+- Performance testing with realistic financial data volumes is crucial
+
+## Project Intelligence Notes
+
+### Success Factors
+- Comprehensive planning and documentation before coding
+- Security and compliance considerations from project start
+- User experience focus despite complex financial requirements
+- Scalable architecture planning for future growth
+- Strong testing culture for financial accuracy
+
+### Risk Mitigation Strategies
+- Multiple data provider integrations for redundancy
+- Comprehensive error handling and graceful degradation
+- Regular security audits and penetration testing
+- Performance testing with realistic data volumes
+- User feedback loops throughout development
+
+### Development Velocity Optimizers
+- Memory bank system for context preservation
+- Comprehensive project documentation
+- Clear architectural decisions documented upfront
+- Automated testing and deployment pipelines
+- Code quality tools integrated from start
+
+## Next Session Preparation
+
+When starting the next session:
+1. Read all memory bank files to understand current context
+2. Check progress.md for current status and next steps
+3. Review activeContext.md for immediate priorities
+4. Consider any new insights or patterns discovered
+5. Update relevant documentation if significant changes made
+
+Remember: This project requires extra attention to security, compliance, and data accuracy due to the financial domain. Every decision should consider these factors.
