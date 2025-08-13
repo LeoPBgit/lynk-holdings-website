@@ -511,9 +511,6 @@ p {
     margin-bottom: 0.5rem;
 }
 
-.value-item:nth-child(2) h4 {
-    color: var(--accent-orange);
-}
 
 .value-item p {
     color: var(--dark-gray);
