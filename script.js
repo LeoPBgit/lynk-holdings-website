@@ -27,16 +27,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
+// Navbar hide/show on scroll
+let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 139, 252, 0.1)';
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down - hide navbar
+        navbar.style.transform = 'translateY(-100%)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+        // Scrolling up - show navbar
+        navbar.style.transform = 'translateY(0)';
     }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 });
 
 // Scroll animations
@@ -178,31 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Floating cards animation enhancement
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-    
-    cards.forEach((card, index) => {
-        // Add random rotation on hover
-        card.addEventListener('mouseenter', () => {
-            const rotation = Math.random() * 20 - 10; // Random rotation between -10 and 10 degrees
-            card.style.transform = `translateY(-20px) rotate(${rotation}deg)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0) rotate(0deg)';
-        });
-        
-        // Add subtle parallax effect on mouse move
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            card.style.transform = `translateY(-20px) translateX(${x * 0.1}px) translateY(${y * 0.1}px)`;
-        });
-    });
-});
 
 // Tech grid items interaction
 document.addEventListener('DOMContentLoaded', () => {
@@ -243,16 +223,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.floating-cards');
-    
-    parallaxElements.forEach(element => {
-        const speed = 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
 
 // Add loading animation
 window.addEventListener('load', () => {
@@ -334,3 +304,34 @@ document.querySelector('.nav-logo').addEventListener('click', () => {
         clickCount = 0;
     }
 });
+
+// Portfolio tabs functionality
+function toggleTab(header) {
+    const tab = header.parentElement;
+    const content = tab.querySelector('.tab-content');
+    const arrow = header.querySelector('.tab-arrow');
+    
+    // Close all other tabs
+    document.querySelectorAll('.portfolio-tab').forEach(otherTab => {
+        if (otherTab !== tab) {
+            const otherHeader = otherTab.querySelector('.tab-header');
+            const otherContent = otherTab.querySelector('.tab-content');
+            const otherArrow = otherTab.querySelector('.tab-arrow');
+            
+            otherHeader.classList.remove('active');
+            otherContent.classList.remove('active');
+            otherArrow.textContent = '+';
+        }
+    });
+    
+    // Toggle current tab
+    if (header.classList.contains('active')) {
+        header.classList.remove('active');
+        content.classList.remove('active');
+        arrow.textContent = '+';
+    } else {
+        header.classList.add('active');
+        content.classList.add('active');
+        arrow.textContent = '−';
+    }
+}
