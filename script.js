@@ -49,6 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('scroll-animate');
         observer.observe(el);
     });
+    
+    // Add visual section animation
+    const visualSection = document.querySelector('.visual-section-2');
+    if (visualSection) {
+        observer.observe(visualSection);
+    }
+    
+    // Add about section image animation
+    const aboutImage = document.querySelector('.about-cover-image');
+    if (aboutImage) {
+        observer.observe(aboutImage);
+    }
 });
 
 // Counter animation for stats
@@ -364,3 +376,221 @@ function toggleCompaniesMoreInfo(event) {
         originalMoreLink.style.display = 'none';
     }
 }
+
+// Portfolio tabs scroll animation
+document.addEventListener('DOMContentLoaded', () => {
+    const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+    
+    const portfolioObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    portfolioTabs.forEach(tab => {
+        portfolioObserver.observe(tab);
+    });
+});
+
+// Company section header animation (same as hero)
+document.addEventListener('DOMContentLoaded', () => {
+    const companyHeader = document.querySelector('.portfolio .section-header');
+    
+    if (companyHeader) {
+        const companyTitle = companyHeader.querySelector('.section-title');
+        const companyDescription = companyHeader.querySelector('.section-description');
+        
+        const companyHeaderObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add animate class to trigger CSS transitions
+                    if (companyTitle) {
+                        companyTitle.classList.add('animate');
+                    }
+                    
+                    if (companyDescription) {
+                        companyDescription.classList.add('animate');
+                    }
+                    
+                    companyHeaderObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        companyHeaderObserver.observe(companyHeader);
+    }
+});
+
+// About section header animation
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutSection = document.querySelector('.about');
+    
+    if (aboutSection) {
+        const aboutTitle = aboutSection.querySelector('.section-title');
+        const aboutDescriptions = aboutSection.querySelectorAll('.about-description');
+        
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add animate class to trigger CSS transitions
+                    if (aboutTitle) {
+                        aboutTitle.classList.add('animate');
+                    }
+                    
+                    aboutDescriptions.forEach(desc => {
+                        desc.classList.add('animate');
+                    });
+                    
+                    aboutObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        aboutObserver.observe(aboutSection);
+    }
+});
+
+// Contact section header animation
+document.addEventListener('DOMContentLoaded', () => {
+    const contactSection = document.querySelector('.contact');
+    
+    if (contactSection) {
+        const contactTitle = contactSection.querySelector('.section-title');
+        const contactDescription = contactSection.querySelector('.contact-description');
+        const contactMethods = contactSection.querySelectorAll('.contact-method');
+        const contactForm = contactSection.querySelector('.form');
+        
+        const contactObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add animate class to trigger CSS transitions
+                    if (contactTitle) {
+                        contactTitle.classList.add('animate');
+                    }
+                    
+                    if (contactDescription) {
+                        contactDescription.classList.add('animate');
+                    }
+                    
+                    contactMethods.forEach(method => {
+                        method.classList.add('animate');
+                    });
+                    
+                    if (contactForm) {
+                        contactForm.classList.add('animate');
+                    }
+                    
+                    contactObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        contactObserver.observe(contactSection);
+    }
+});
+
+// Signature section animation with scroll-position-based typewriter effect
+document.addEventListener('DOMContentLoaded', () => {
+    const signatureSection = document.querySelector('.signature-section');
+    
+    if (signatureSection) {
+        const signatureImage = signatureSection.querySelector('.signature-floating-image');
+        const signatureText = signatureSection.querySelector('.signature-text');
+        const originalText = signatureText.textContent;
+        let isInViewport = false;
+        
+        // Clear text initially for typewriter effect
+        signatureText.textContent = '';
+        
+        // Intersection Observer to detect when section is in viewport
+        const signatureObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    isInViewport = true;
+                    // Animate image
+                    if (signatureImage) {
+                        signatureImage.classList.add('animate');
+                    }
+                    signatureText.classList.add('animate');
+                } else {
+                    isInViewport = false;
+                    // Hide image
+                    if (signatureImage) {
+                        signatureImage.classList.remove('animate');
+                    }
+                    signatureText.classList.remove('animate');
+                    signatureText.textContent = '';
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        signatureObserver.observe(signatureSection);
+        
+        // Scroll event listener for typewriter effect
+        let lastScrollY = window.scrollY;
+        let scrollTimeout;
+        
+        window.addEventListener('scroll', () => {
+            if (!isInViewport) return;
+            
+            const currentScrollY = window.scrollY;
+            const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+            lastScrollY = currentScrollY;
+            
+            // Get section position
+            const sectionRect = signatureSection.getBoundingClientRect();
+            const sectionTop = sectionRect.top + window.scrollY;
+            const sectionHeight = sectionRect.height;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const maxScrollY = documentHeight - windowHeight;
+            
+            // Calculate scroll progress - start when section comes into view, complete at bottom of page
+            const scrollStart = sectionTop - windowHeight;
+            const scrollEnd = maxScrollY; // End at the very bottom of the page
+            const scrollRange = scrollEnd - scrollStart;
+            const scrollProgress = Math.max(0, Math.min(1, (currentScrollY - scrollStart) / scrollRange));
+            
+            // Calculate how many characters to show based on scroll progress
+            const targetLength = Math.floor(scrollProgress * originalText.length);
+            const currentLength = signatureText.textContent.length;
+            
+            // Update text based on scroll position
+            if (targetLength !== currentLength) {
+                if (targetLength > currentLength) {
+                    // Type more characters
+                    signatureText.textContent = originalText.substring(0, targetLength);
+                } else {
+                    // Untype characters
+                    signatureText.textContent = originalText.substring(0, targetLength);
+                }
+            }
+            
+            // Clear any existing timeout
+            clearTimeout(scrollTimeout);
+            
+            // Set timeout to detect when scrolling stops
+            scrollTimeout = setTimeout(() => {
+                // Scrolling has stopped - no additional action needed
+                // Text remains at current position
+            }, 150);
+        });
+    }
+});

@@ -312,6 +312,21 @@ p {
     border-radius: 50%;
     transform: translate(-50%, -50%) translate(25px, 0);
     z-index: 3;
+    transition: transform 0.3s ease-out;
+    transform-origin: -25px center;
+}
+
+.hero-symbol:hover .gold-dot {
+    animation: orbitGoldDot 2s linear infinite;
+}
+
+@keyframes orbitGoldDot {
+    0% {
+        transform: translate(-50%, -50%) translate(25px, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(25px, 0) rotate(360deg);
+    }
 }
 
 
@@ -1408,17 +1423,17 @@ p {
 }
 
 .tab-image {
-    flex-shrink: 0;
-    width: 400px;
-    height: 300px;
+    flex: 1;
+    aspect-ratio: 1;
     overflow: hidden;
+    align-self: flex-start;
 }
 
 .tab-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
+    object-position: top center;
 }
 
 .tab-text {
@@ -1525,12 +1540,13 @@ p {
 .tech-item {
     background: transparent;
     border: 0.5px solid var(--white);
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
     font-family: var(--font-family);
     font-weight: var(--font-light);
     color: var(--white);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
 }
 
 /* Contact Section */
@@ -1982,7 +1998,111 @@ p {
     animation: fadeInUp 0.6s ease-out;
 }
 
-/* Scroll animations */
+/* Scroll animations for portfolio tabs */
+.portfolio-tab {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.portfolio-tab.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-tab:nth-child(1).animate { transition-delay: 0.1s; }
+.portfolio-tab:nth-child(2).animate { transition-delay: 0.2s; }
+.portfolio-tab:nth-child(3).animate { transition-delay: 0.3s; }
+.portfolio-tab:nth-child(4).animate { transition-delay: 0.4s; }
+.portfolio-tab:nth-child(5).animate { transition-delay: 0.5s; }
+.portfolio-tab:nth-child(6).animate { transition-delay: 0.6s; }
+
+/* Company section header animation */
+.portfolio .section-title,
+.portfolio .section-description {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.portfolio .section-title.animate,
+.portfolio .section-description.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.portfolio .section-description.animate {
+    transition-delay: 0.3s;
+}
+
+/* About section header animation */
+.about .section-title,
+.about .about-description {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.about .section-title.animate,
+.about .about-description.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about .about-description.animate {
+    transition-delay: 0.3s;
+}
+
+/* Contact section header animation */
+.contact .section-title,
+.contact .contact-description,
+.contact .contact-method,
+.contact .form {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.contact .section-title.animate,
+.contact .contact-description.animate,
+.contact .contact-method.animate,
+.contact .form.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.contact .contact-description.animate {
+    transition-delay: 0.3s;
+}
+
+.contact .contact-method.animate {
+    transition-delay: 0.6s;
+}
+
+.contact .form.animate {
+    transition-delay: 0.9s;
+}
+
+/* Signature section animation */
+.signature-floating-image,
+.signature-text {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.signature-floating-image.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.signature-text.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out 0.3s;
+}
+
+/* Scroll animations for stats and slider cards */
 .scroll-animate {
     opacity: 0;
     transform: translateY(30px);
@@ -1990,6 +2110,28 @@ p {
 }
 
 .scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Visual section animation */
+.visual-section-2 {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.visual-section-2.animate {
+    opacity: 1;
+}
+
+/* About section image animation */
+.about-cover-image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-cover-image.animate {
     opacity: 1;
     transform: translateY(0);
 }
