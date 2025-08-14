@@ -6,7 +6,7 @@
     <title>Lynk Holdings - AI Software Development</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Text:ital@0;1&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Text:ital@0;1&family=Roboto:wght@300;400;500;700&family=Lato:wght@500&family=Meddon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,17 +14,17 @@
     <nav class="navbar">
         <div class="nav-container">
         <div class="nav-logo">
-            <div class="logo-symbol">
-                <div class="symbol-inner"></div>
+            <div class="logo-text">
+                <h2>Lynk Holdings</h2>
+                <span class="logo-tagline">AI Development Group</span>
             </div>
-            <h2>Lynk Holdings</h2>
         </div>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#brands" class="nav-link">Our Brands</a>
+                    <a href="#portfolio" class="nav-link">Companies</a>
                 </li>
                 <li class="nav-item">
                     <a href="#about" class="nav-link">About</a>
@@ -45,25 +45,36 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-symbol">
+                    <div class="symbol-inner"></div>
+                    <div class="gold-dot"></div>
+                </div>
                 <h1 class="hero-title">
                     Shaping the Future<br>with <span class="gradient-text">AI Innovation</span>
                 </h1>
                 <p class="hero-description">
                     We're a collective of visionary brands pushing the boundaries of artificial intelligence. 
                     From cutting-edge software solutions to revolutionary AI applications, we're building 
-                    tomorrow's technology today.
+                    tomorrow's technology today. <a href="#" class="more-link" onclick="toggleMoreInfo(event)">more</a>
                 </p>
-                <div class="hero-buttons">
-                    <a href="#brands" class="btn btn-primary">Explore Our Brands</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                <div class="hero-more-content" id="heroMoreContent">
+                    <p class="hero-more-paragraph">
+                        Founded on the principle that artificial intelligence should amplify human potential rather than replace it, Lynk Holdings has emerged as a pioneering force in the AI landscape. Our holding company structure allows each of our six specialized brands to maintain their unique focus and expertise while benefiting from shared resources, collaborative research, and unified strategic vision.
+                    </p>
+                    <p class="hero-more-paragraph">
+                        Our approach to AI development is fundamentally different from traditional tech companies. We believe in building solutions that are not only technically advanced but also ethically sound, user-centric, and designed to solve real-world problems. Each of our brands operates at the cutting edge of their respective domains, from quantum computing research to enterprise machine learning, creating a comprehensive ecosystem of AI technologies.
+                    </p>
+                    <p class="hero-more-paragraph">
+                        With a combined team of over 500 researchers, engineers, and AI specialists across our portfolio companies, Lynk Holdings represents one of the most diverse and innovative AI development organizations in the industry. Our commitment to open research, ethical AI development, and human-centered design principles guides every project we undertake, ensuring that the future we're building is one that benefits everyone. <a href="#" class="more-link" onclick="toggleMoreInfo(event)">less</a>
+                    </p>
+                </div>
+                <div class="hero-signature-container">
+                    <p class="hero-signature">Chris Gurko</p>
+                    <p class="hero-signature-name">— Chris Gurko</p>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-logo-animation">
-                    <div class="animated-symbol">
-                        <div class="symbol-core"></div>
-                    </div>
-                </div>
+                <img src="Cover.png" alt="Lynk Holdings AI Innovation" class="hero-cover-image">
             </div>
         </div>
     </section>
@@ -76,15 +87,6 @@
                 <div class="brands-track">
                     <!-- Brand 1 -->
                     <div class="brand-card" data-brand="nexus">
-                        <div class="brand-icon">
-                            <div class="icon-nexus">
-                                <div class="nexus-symbol">
-                                    <div class="nexus-core"></div>
-                                    <div class="nexus-ring"></div>
-                                    <div class="nexus-dots"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Nexus AI</h3>
                             <p class="brand-description">
@@ -99,15 +101,6 @@
 
                     <!-- Brand 2 -->
                     <div class="brand-card" data-brand="quantum">
-                        <div class="brand-icon">
-                            <div class="icon-quantum">
-                                <div class="quantum-symbol">
-                                    <div class="quantum-atom"></div>
-                                    <div class="quantum-orbit"></div>
-                                    <div class="quantum-particles"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Quantum Labs</h3>
                             <p class="brand-description">
@@ -122,14 +115,6 @@
 
                     <!-- Brand 3 -->
                     <div class="brand-card" data-brand="neural">
-                        <div class="brand-icon">
-                            <div class="icon-neural">
-                                <div class="neural-symbol">
-                                    <div class="neural-nodes"></div>
-                                    <div class="neural-connections"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Neural Dynamics</h3>
                             <p class="brand-description">
@@ -144,15 +129,6 @@
 
                     <!-- Brand 4 -->
                     <div class="brand-card" data-brand="vision">
-                        <div class="brand-icon">
-                            <div class="icon-vision">
-                                <div class="vision-symbol">
-                                    <div class="vision-eye"></div>
-                                    <div class="vision-lens"></div>
-                                    <div class="vision-scan"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Vision Pro</h3>
                             <p class="brand-description">
@@ -167,15 +143,6 @@
 
                     <!-- Brand 5 -->
                     <div class="brand-card" data-brand="synapse">
-                        <div class="brand-icon">
-                            <div class="icon-synapse">
-                                <div class="synapse-symbol">
-                                    <div class="synapse-cloud"></div>
-                                    <div class="synapse-data"></div>
-                                    <div class="synapse-flow"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Synapse Cloud</h3>
                             <p class="brand-description">
@@ -190,15 +157,6 @@
 
                     <!-- Brand 6 -->
                     <div class="brand-card" data-brand="apex">
-                        <div class="brand-icon">
-                            <div class="icon-apex">
-                                <div class="apex-symbol">
-                                    <div class="apex-robot"></div>
-                                    <div class="apex-gears"></div>
-                                    <div class="apex-arms"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Apex Robotics</h3>
                             <p class="brand-description">
@@ -213,15 +171,6 @@
 
                     <!-- Duplicate cards for seamless loop -->
                     <div class="brand-card" data-brand="nexus">
-                        <div class="brand-icon">
-                            <div class="icon-nexus">
-                                <div class="nexus-symbol">
-                                    <div class="nexus-core"></div>
-                                    <div class="nexus-ring"></div>
-                                    <div class="nexus-dots"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Nexus AI</h3>
                             <p class="brand-description">
@@ -235,15 +184,6 @@
                     </div>
 
                     <div class="brand-card" data-brand="quantum">
-                        <div class="brand-icon">
-                            <div class="icon-quantum">
-                                <div class="quantum-symbol">
-                                    <div class="quantum-atom"></div>
-                                    <div class="quantum-orbit"></div>
-                                    <div class="quantum-particles"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Quantum Labs</h3>
                             <p class="brand-description">
@@ -257,14 +197,6 @@
                     </div>
 
                     <div class="brand-card" data-brand="neural">
-                        <div class="brand-icon">
-                            <div class="icon-neural">
-                                <div class="neural-symbol">
-                                    <div class="neural-nodes"></div>
-                                    <div class="neural-connections"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="brand-content">
                             <h3 class="brand-name">Neural Dynamics</h3>
                             <p class="brand-description">
@@ -273,6 +205,46 @@
                             <div class="brand-tags">
                                 <span class="tag">NLP</span>
                                 <span class="tag">Chatbots</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional duplicates for seamless loop -->
+                    <div class="brand-card" data-brand="vision">
+                        <div class="brand-content">
+                            <h3 class="brand-name">Vision Pro</h3>
+                            <p class="brand-description">
+                                Computer vision and image recognition for autonomous systems.
+                            </p>
+                            <div class="brand-tags">
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">Recognition</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brand-card" data-brand="synapse">
+                        <div class="brand-content">
+                            <h3 class="brand-name">Synapse Cloud</h3>
+                            <p class="brand-description">
+                                Cloud-native AI infrastructure and deployment solutions.
+                            </p>
+                            <div class="brand-tags">
+                                <span class="tag">Cloud AI</span>
+                                <span class="tag">MLOps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brand-card" data-brand="apex">
+                        <div class="brand-content">
+                            <h3 class="brand-name">Apex Robotics</h3>
+                            <p class="brand-description">
+                                Advanced robotics and automation systems powered by AI.
+                            </p>
+                            <div class="brand-tags">
+                                <span class="tag">Robotics</span>
+                                <span class="tag">Automation</span>
                             </div>
                         </div>
                     </div>
@@ -318,8 +290,19 @@
             <div class="section-header">
                 <h2 class="section-title">Companies</h2>
                 <p class="section-description">
-                    Our portfolio encompasses six specialized brands, each pioneering breakthrough AI solutions across different industries and applications. From enterprise machine learning and quantum computing research to natural language processing and computer vision, our companies represent the full spectrum of artificial intelligence innovation. Together, they form a comprehensive ecosystem of AI technologies that are transforming how businesses operate and compete in the digital age.
+                    Our portfolio encompasses six specialized brands, each pioneering breakthrough AI solutions across different industries and applications. From enterprise machine learning to computer vision, our companies represent the full spectrum of artificial intelligence innovation. <a href="#" class="more-link" onclick="toggleCompaniesMoreInfo(event)">more</a>
                 </p>
+                <div class="companies-more-content" id="companiesMoreContent">
+                    <p class="companies-more-paragraph">
+                        Each of our six brands operates at the cutting edge of their respective domains, from quantum computing research and natural language processing to cloud infrastructure and advanced robotics. This diverse portfolio allows us to address virtually any AI challenge that modern businesses face, whether they need predictive analytics, conversational interfaces, computer vision systems, or intelligent automation solutions.
+                    </p>
+                    <p class="companies-more-paragraph">
+                        Our integrated approach means that clients can leverage synergies between different AI technologies, creating more powerful and comprehensive solutions than any single-focus company could provide. For example, a client might combine our computer vision capabilities with our natural language processing and cloud infrastructure to create a complete intelligent document processing system.
+                    </p>
+                    <p class="companies-more-paragraph">
+                        Together, these companies form a comprehensive ecosystem of AI technologies that are transforming how businesses operate and compete in the digital age. From Fortune 500 enterprises to innovative startups, our clients benefit from having access to the full spectrum of AI innovation under one unified strategic vision, ensuring their technology investments work together seamlessly to drive business results. <a href="#" class="more-link" onclick="toggleCompaniesMoreInfo(event)">less</a>
+                    </p>
+                </div>
             </div>
             
             <div class="portfolio-tabs">
@@ -337,9 +320,14 @@
                         <div class="tab-arrow">+</div>
                     </div>
                     <div class="tab-content">
-                        <p class="tab-description">
-                            Nexus AI stands at the forefront of enterprise artificial intelligence, revolutionizing how organizations harness the power of their data assets. Our comprehensive machine learning platform combines cutting-edge algorithms with intuitive interfaces, enabling businesses to unlock unprecedented insights from their most valuable resource: information.
-                        </p>
+                        <div class="tab-content-wrapper">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&auto=format" alt="Machine Learning Analytics Dashboard" />
+                            </div>
+                            <div class="tab-text">
+                                <p class="tab-description">
+                                    Nexus AI stands at the forefront of enterprise artificial intelligence, revolutionizing how organizations harness the power of their data assets. Our comprehensive machine learning platform combines cutting-edge algorithms with intuitive interfaces, enabling businesses to unlock unprecedented insights from their most valuable resource: information.
+                                </p>
                         <p class="tab-description">
                             Our advanced neural networks and deep learning models process vast amounts of structured and unstructured data, identifying complex patterns that would be impossible for human analysts to detect. From customer behavior prediction to supply chain optimization, market trend forecasting to risk assessment, Nexus AI delivers precision-driven insights that transform decision-making processes across entire organizations.
                         </p>
@@ -349,11 +337,13 @@
                         <p class="tab-description">
                             Our enterprise clients span industries from finance and healthcare to retail and manufacturing, each benefiting from tailored AI solutions that address their unique challenges. With real-time processing capabilities, scalable cloud infrastructure, and enterprise-grade security, Nexus AI ensures that your organization stays ahead of the competition in an increasingly data-driven world.
                         </p>
-                        <div class="tab-features">
-                            <span class="feature">Predictive Analytics</span>
-                            <span class="feature">Data Mining</span>
-                            <span class="feature">Business Intelligence</span>
-                            <span class="feature">Automated Insights</span>
+                                <div class="tab-features">
+                                    <span class="feature">Predictive Analytics</span>
+                                    <span class="feature">Data Mining</span>
+                                    <span class="feature">Business Intelligence</span>
+                                    <span class="feature">Automated Insights</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -372,9 +362,14 @@
                         <div class="tab-arrow">+</div>
                     </div>
                     <div class="tab-content">
-                        <p class="tab-description">
-                            Quantum Labs represents the pinnacle of quantum computing research and development, pioneering breakthrough technologies that leverage the fundamental principles of quantum mechanics to solve computational problems that are intractable for classical computers. Our interdisciplinary team of quantum physicists, computer scientists, and mathematicians work at the intersection of theoretical physics and practical computing applications.
-                        </p>
+                        <div class="tab-content-wrapper">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop&auto=format" alt="Quantum Computing Research Lab" />
+                            </div>
+                            <div class="tab-text">
+                                <p class="tab-description">
+                                    Quantum Labs represents the pinnacle of quantum computing research and development, pioneering breakthrough technologies that leverage the fundamental principles of quantum mechanics to solve computational problems that are intractable for classical computers. Our interdisciplinary team of quantum physicists, computer scientists, and mathematicians work at the intersection of theoretical physics and practical computing applications.
+                                </p>
                         <p class="tab-description">
                             Our quantum algorithms division focuses on developing novel approaches to machine learning, optimization, and cryptography that exploit quantum superposition, entanglement, and interference. From quantum neural networks that can process exponentially more information than classical systems to quantum optimization algorithms that can solve complex scheduling and routing problems in polynomial time, we're pushing the boundaries of what's computationally possible.
                         </p>
@@ -384,11 +379,13 @@
                         <p class="tab-description">
                             We collaborate with leading universities, government research institutions, and technology companies worldwide to accelerate the development of quantum technologies. Our quantum simulators and development platforms enable researchers and developers to experiment with quantum algorithms before quantum hardware becomes widely available, democratizing access to quantum computing research and fostering innovation across the global quantum ecosystem.
                         </p>
-                        <div class="tab-features">
-                            <span class="feature">Quantum Algorithms</span>
-                            <span class="feature">Quantum ML</span>
-                            <span class="feature">Cryptography</span>
-                            <span class="feature">Research & Development</span>
+                                <div class="tab-features">
+                                    <span class="feature">Quantum Algorithms</span>
+                                    <span class="feature">Quantum ML</span>
+                                    <span class="feature">Cryptography</span>
+                                    <span class="feature">Research & Development</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -406,14 +403,30 @@
                         <div class="tab-arrow">+</div>
                     </div>
                     <div class="tab-content">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop&auto=format" alt="Natural Language Processing Interface" />
+                            </div>
+                            <div class="tab-text">
+                                <p class="tab-description">
+                                    Neural Dynamics specializes in natural language processing and conversational AI that understands context, emotion, and intent. Our advanced neural networks power intelligent chatbots, virtual assistants, and language translation systems that deliver human-like interactions. From customer service automation to content generation, we make AI communication feel natural and meaningful.
+                                </p>
                         <p class="tab-description">
-                            Neural Dynamics specializes in natural language processing and conversational AI that understands context, emotion, and intent. Our advanced neural networks power intelligent chatbots, virtual assistants, and language translation systems that deliver human-like interactions. From customer service automation to content generation, we make AI communication feel natural and meaningful.
+                            Our breakthrough in contextual understanding allows our AI systems to maintain coherent conversations across multiple topics and sessions, remembering user preferences and adapting communication styles in real-time. Through advanced transformer architectures and proprietary attention mechanisms, Neural Dynamics creates AI that doesn't just process language—it truly comprehends meaning, nuance, and emotional undertones.
                         </p>
-                        <div class="tab-features">
-                            <span class="feature">Conversational AI</span>
-                            <span class="feature">Language Translation</span>
-                            <span class="feature">Sentiment Analysis</span>
-                            <span class="feature">Content Generation</span>
+                        <p class="tab-description">
+                            The platform excels in multilingual environments, offering real-time translation and cross-cultural communication capabilities that preserve context and cultural nuances. Our sentiment analysis engines can detect subtle emotional cues, enabling businesses to provide more empathetic customer service and create content that resonates with diverse audiences across global markets.
+                        </p>
+                        <p class="tab-description">
+                            From Fortune 500 companies to innovative startups, Neural Dynamics powers conversational experiences that drive engagement and business results. Our enterprise solutions include customizable AI assistants, automated content creation tools, and advanced analytics platforms that help organizations understand and respond to customer needs with unprecedented accuracy and speed.
+                        </p>
+                                <div class="tab-features">
+                                    <span class="feature">Conversational AI</span>
+                                    <span class="feature">Language Translation</span>
+                                    <span class="feature">Sentiment Analysis</span>
+                                    <span class="feature">Content Generation</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -432,14 +445,30 @@
                         <div class="tab-arrow">+</div>
                     </div>
                     <div class="tab-content">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&auto=format" alt="Computer Vision Technology" />
+                            </div>
+                            <div class="tab-text">
+                                <p class="tab-description">
+                                    Vision Pro leads the computer vision revolution with cutting-edge image recognition and analysis technologies. Our AI systems can identify objects, analyze scenes, detect anomalies, and extract meaningful information from visual data in real-time. From autonomous vehicles to medical imaging, security systems to quality control, Vision Pro enables machines to see and understand the world.
+                                </p>
                         <p class="tab-description">
-                            Vision Pro leads the computer vision revolution with cutting-edge image recognition and analysis technologies. Our AI systems can identify objects, analyze scenes, detect anomalies, and extract meaningful information from visual data in real-time. From autonomous vehicles to medical imaging, security systems to quality control, Vision Pro enables machines to see and understand the world.
+                            Our proprietary deep learning architectures process visual information with unprecedented accuracy and speed, utilizing advanced convolutional neural networks and transformer-based models that can understand complex spatial relationships and temporal patterns. Vision Pro's algorithms excel at handling challenging conditions including low light, motion blur, and partial occlusion, making our solutions reliable in real-world applications.
                         </p>
-                        <div class="tab-features">
-                            <span class="feature">Object Recognition</span>
-                            <span class="feature">Medical Imaging</span>
-                            <span class="feature">Autonomous Systems</span>
-                            <span class="feature">Quality Control</span>
+                        <p class="tab-description">
+                            In the healthcare sector, Vision Pro's medical imaging solutions assist radiologists in detecting early-stage diseases, analyzing tissue samples, and monitoring patient recovery with precision that often exceeds human capabilities. Our autonomous systems division provides computer vision solutions for self-driving vehicles, drones, and robotic systems that need to navigate and interact safely with dynamic environments.
+                        </p>
+                        <p class="tab-description">
+                            Manufacturing and industrial clients rely on Vision Pro for quality assurance, predictive maintenance, and process optimization. Our systems can detect microscopic defects, monitor production lines in real-time, and predict equipment failures before they occur, resulting in significant cost savings and improved product quality across diverse industries from electronics to pharmaceuticals.
+                        </p>
+                                <div class="tab-features">
+                                    <span class="feature">Object Recognition</span>
+                                    <span class="feature">Medical Imaging</span>
+                                    <span class="feature">Autonomous Systems</span>
+                                    <span class="feature">Quality Control</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -458,14 +487,30 @@
                         <div class="tab-arrow">+</div>
                     </div>
                     <div class="tab-content">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&auto=format" alt="Cloud Infrastructure and MLOps Platform" />
+                            </div>
+                            <div class="tab-text">
+                                <p class="tab-description">
+                                    Synapse Cloud provides the infrastructure backbone for AI deployment at scale. Our cloud-native platform offers seamless model training, deployment, and monitoring capabilities with enterprise-grade security and reliability. From MLOps automation to distributed computing resources, Synapse Cloud ensures your AI solutions perform optimally in production environments.
+                                </p>
                         <p class="tab-description">
-                            Synapse Cloud provides the infrastructure backbone for AI deployment at scale. Our cloud-native platform offers seamless model training, deployment, and monitoring capabilities with enterprise-grade security and reliability. From MLOps automation to distributed computing resources, Synapse Cloud ensures your AI solutions perform optimally in production environments.
+                            Our advanced orchestration engine automatically manages the entire machine learning lifecycle, from data preprocessing and model training to deployment and continuous monitoring. With support for popular frameworks like TensorFlow, PyTorch, and Scikit-learn, Synapse Cloud enables data science teams to focus on innovation rather than infrastructure management, accelerating time-to-market for AI initiatives.
                         </p>
-                        <div class="tab-features">
-                            <span class="feature">MLOps Platform</span>
-                            <span class="feature">Model Deployment</span>
-                            <span class="feature">Auto Scaling</span>
-                            <span class="feature">Performance Monitoring</span>
+                        <p class="tab-description">
+                            The platform's intelligent auto-scaling capabilities dynamically adjust computing resources based on workload demands, ensuring optimal performance while minimizing costs. Our distributed training architecture can handle massive datasets and complex models across multiple GPUs and nodes, making it possible to train state-of-the-art AI models that would be impossible on traditional infrastructure.
+                        </p>
+                        <p class="tab-description">
+                            Enterprise clients benefit from comprehensive governance features including model versioning, audit trails, and compliance reporting that meet the strictest regulatory requirements. With built-in A/B testing, canary deployments, and rollback capabilities, Synapse Cloud ensures that AI model updates can be deployed safely and efficiently, maintaining business continuity while enabling continuous improvement.
+                        </p>
+                                <div class="tab-features">
+                                    <span class="feature">MLOps Platform</span>
+                                    <span class="feature">Model Deployment</span>
+                                    <span class="feature">Auto Scaling</span>
+                                    <span class="feature">Performance Monitoring</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -484,14 +529,30 @@
                         <div class="tab-arrow">+</div>
                     </div>
                     <div class="tab-content">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop&auto=format" alt="Advanced Robotics and Automation Systems" />
+                            </div>
+                            <div class="tab-text">
+                                <p class="tab-description">
+                                    Apex Robotics creates intelligent robotic systems that seamlessly integrate AI with physical automation. Our robots combine advanced sensors, machine learning, and precise mechanical control to perform complex tasks in manufacturing, logistics, healthcare, and service industries. From collaborative robots to autonomous systems, we're building the future of intelligent automation.
+                                </p>
                         <p class="tab-description">
-                            Apex Robotics creates intelligent robotic systems that seamlessly integrate AI with physical automation. Our robots combine advanced sensors, machine learning, and precise mechanical control to perform complex tasks in manufacturing, logistics, healthcare, and service industries. From collaborative robots to autonomous systems, we're building the future of intelligent automation.
+                            Our collaborative robots (cobots) are designed to work safely alongside human workers, enhancing productivity while maintaining the flexibility and creativity that only humans can provide. Through advanced computer vision and force-sensing technologies, Apex robots can adapt to changing environments, learn from human demonstrations, and continuously improve their performance through reinforcement learning algorithms.
                         </p>
-                        <div class="tab-features">
-                            <span class="feature">Collaborative Robots</span>
-                            <span class="feature">Industrial Automation</span>
-                            <span class="feature">Autonomous Systems</span>
-                            <span class="feature">Smart Manufacturing</span>
+                        <p class="tab-description">
+                            In healthcare applications, Apex Robotics develops surgical assistance robots, rehabilitation devices, and automated pharmacy systems that improve patient outcomes while reducing human error. Our logistics robots optimize warehouse operations, inventory management, and last-mile delivery, utilizing sophisticated path planning and obstacle avoidance algorithms to navigate complex environments autonomously.
+                        </p>
+                        <p class="tab-description">
+                            The manufacturing sector benefits from our smart factory solutions that integrate seamlessly with existing production lines, providing predictive maintenance, quality control, and flexible automation capabilities. Our robots can be rapidly reconfigured for different tasks, making them ideal for companies that need to adapt quickly to changing market demands while maintaining high standards of precision and reliability.
+                        </p>
+                                <div class="tab-features">
+                                    <span class="feature">Collaborative Robots</span>
+                                    <span class="feature">Industrial Automation</span>
+                                    <span class="feature">Autonomous Systems</span>
+                                    <span class="feature">Smart Manufacturing</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -503,6 +564,19 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
+                <div class="about-image">
+                    <img src="abstract.jpg" alt="AI Innovation" class="about-cover-image">
+                    <div class="about-visual">
+                        <div class="tech-grid">
+                            <div class="tech-item">Neural Networks</div>
+                            <div class="tech-item">Deep Learning</div>
+                            <div class="tech-item">Computer Vision</div>
+                            <div class="tech-item">NLP</div>
+                            <div class="tech-item">Quantum AI</div>
+                            <div class="tech-item">MLOps</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="about-text">
                     <h2 class="section-title">Building Tomorrow's AI</h2>
                     <p class="about-description">
@@ -530,16 +604,6 @@
                             <h4>Ethical AI</h4>
                             <p>Responsible development with transparency and fairness at our core</p>
                         </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="tech-grid">
-                        <div class="tech-item">Neural Networks</div>
-                        <div class="tech-item">Deep Learning</div>
-                        <div class="tech-item">Computer Vision</div>
-                        <div class="tech-item">NLP</div>
-                        <div class="tech-item">Quantum AI</div>
-                        <div class="tech-item">MLOps</div>
                     </div>
                 </div>
             </div>
@@ -602,10 +666,13 @@
         </div>
     </section>
 
-    <!-- Visual Section -->
-    <section class="visual-section">
-        <div class="visual-container">
-            <img src="abstract.jpg" alt="Abstract Background" class="visual-image">
+    <!-- Signature Section -->
+    <section class="signature-section">
+        <div class="container">
+            <div class="signature-content">
+                <img src="Cover-2.png" alt="AI Innovation Cover" class="signature-floating-image">
+                <p class="signature-text"><span class="signature-thin">Striving for</span> Human-Centered AI</p>
+            </div>
         </div>
     </section>
 
@@ -614,8 +681,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Lynk Holdings</h3>
-                    <p>Shaping the future with AI innovation</p>
+                    <div class="footer-logo">
+                        <div class="footer-symbol">
+                            <div class="symbol-inner"></div>
+                            <div class="gold-dot"></div>
+                        </div>
+                        <div class="footer-logo-text">
+                            <h3>Lynk Holdings</h3>
+                            <span class="footer-logo-tagline">AI Development Group</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">

@@ -27,22 +27,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar hide/show on scroll
-let lastScrollTop = 0;
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down - hide navbar
-        navbar.style.transform = 'translateY(-100%)';
-    } else {
-        // Scrolling up - show navbar
-        navbar.style.transform = 'translateY(0)';
-    }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-});
 
 // Scroll animations
 const observerOptions = {
@@ -230,11 +214,11 @@ style.textContent = `
 document.head.appendChild(style);
 
 
-// Add loading animation
+// Add loading animation (without typewriter effect)
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
     
-    // Animate hero content on load
+    // Animate hero content on load (but not typewriter)
     const heroContent = document.querySelector('.hero-content');
     const heroVisual = document.querySelector('.hero-visual');
     
@@ -243,6 +227,7 @@ window.addEventListener('load', () => {
         heroVisual.style.animation = 'fadeInUp 1s ease-out 0.3s both';
     }
 });
+
 
 // Brand card click handling for future navigation
 document.addEventListener('DOMContentLoaded', () => {
@@ -317,27 +302,65 @@ function toggleTab(header) {
     const content = tab.querySelector('.tab-content');
     const arrow = header.querySelector('.tab-arrow');
     
-    // Close all other tabs
-    document.querySelectorAll('.portfolio-tab').forEach(otherTab => {
-        if (otherTab !== tab) {
-            const otherHeader = otherTab.querySelector('.tab-header');
-            const otherContent = otherTab.querySelector('.tab-content');
-            const otherArrow = otherTab.querySelector('.tab-arrow');
-            
-            otherHeader.classList.remove('active');
-            otherContent.classList.remove('active');
-            otherArrow.textContent = '+';
-        }
-    });
-    
-    // Toggle current tab
+    // Toggle current tab only (don't close other tabs)
     if (header.classList.contains('active')) {
         header.classList.remove('active');
         content.classList.remove('active');
-        arrow.textContent = '+';
+        
+        // Smoother text transition
+        arrow.style.opacity = '0';
+        setTimeout(() => {
+            arrow.textContent = '+';
+            arrow.style.opacity = '1';
+        }, 200);
     } else {
         header.classList.add('active');
         content.classList.add('active');
-        arrow.textContent = '−';
+        
+        // Smoother text transition
+        arrow.style.opacity = '0';
+        setTimeout(() => {
+            arrow.textContent = '−';
+            arrow.style.opacity = '1';
+        }, 200);
+    }
+}
+
+// Hero "more" link functionality
+function toggleMoreInfo(event) {
+    event.preventDefault();
+    
+    const moreContent = document.getElementById('heroMoreContent');
+    const originalMoreLink = document.querySelector('.hero-description .more-link');
+    const lessLink = document.querySelector('.hero-less-link-container .more-link');
+    
+    if (moreContent.classList.contains('expanded')) {
+        // Collapse
+        moreContent.classList.remove('expanded');
+        originalMoreLink.style.display = 'inline';
+        originalMoreLink.textContent = 'more';
+    } else {
+        // Expand
+        moreContent.classList.add('expanded');
+        originalMoreLink.style.display = 'none';
+    }
+}
+
+// Companies "more" link functionality
+function toggleCompaniesMoreInfo(event) {
+    event.preventDefault();
+    
+    const moreContent = document.getElementById('companiesMoreContent');
+    const originalMoreLink = document.querySelector('.section-description .more-link');
+    
+    if (moreContent.classList.contains('expanded')) {
+        // Collapse
+        moreContent.classList.remove('expanded');
+        originalMoreLink.style.display = 'inline';
+        originalMoreLink.textContent = 'more';
+    } else {
+        // Expand
+        moreContent.classList.add('expanded');
+        originalMoreLink.style.display = 'none';
     }
 }
