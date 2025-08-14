@@ -86,10 +86,13 @@ const animateCounters = () => {
         }
         
         let current = 0;
-        const increment = finalNumber / 50;
+        const increment = finalNumber / 120; // Slower animation (was 50, now 120)
+        let frameCount = 0;
         
         const updateCounter = () => {
-            if (current < finalNumber) {
+            frameCount++;
+            // Update every 3rd frame to slow down the animation
+            if (frameCount % 3 === 0 && current < finalNumber) {
                 current += increment;
                 if (isPlus) {
                     counter.innerText = Math.ceil(current) + '+';
@@ -98,6 +101,9 @@ const animateCounters = () => {
                 } else {
                     counter.innerText = Math.ceil(current);
                 }
+            }
+            
+            if (current < finalNumber) {
                 requestAnimationFrame(updateCounter);
             } else {
                 counter.innerText = target;

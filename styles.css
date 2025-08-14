@@ -266,13 +266,13 @@ p {
 
 /* Hero Section */
 .hero {
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--light-blue) 0%, rgba(255, 255, 255, 0.8) 100%);
     position: relative;
     overflow: hidden;
-    padding: 1.5rem 0;
+    padding: 4rem 0;
 }
 
 .hero-container {
@@ -281,7 +281,7 @@ p {
     padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 6rem;
     align-items: center;
 }
 
@@ -455,8 +455,12 @@ p {
     margin-bottom: 4rem;
 }
 
+.portfolio .section-header {
+    text-align: left;
+}
+
 .section-title {
-    color: var(--dark-gray);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -467,6 +471,11 @@ p {
     max-width: 800px;
     margin: 0 auto;
     white-space: nowrap;
+}
+
+.portfolio .section-description {
+    margin: 0;
+    white-space: normal;
 }
 
 /* Brands Section */
@@ -491,7 +500,7 @@ p {
 .brands-track {
     display: flex;
     gap: 2rem;
-    animation: slideLeft 35s linear infinite;
+    animation: slideLeft 50s linear infinite;
     width: calc(550px * 9 + 2rem * 8); /* 9 cards with gaps */
 }
 
@@ -918,6 +927,246 @@ p {
     transform: rotate(-45deg);
 }
 
+/* Tab icons - keep white for black background */
+.tab-icon .nexus-symbol {
+    width: 30px;
+    height: 30px;
+}
+
+.tab-icon .nexus-core {
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+}
+
+.tab-icon .nexus-ring {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--white);
+}
+
+.tab-icon .nexus-dots::before,
+.tab-icon .nexus-dots::after {
+    width: 3px;
+    height: 3px;
+    background: var(--white);
+}
+
+.tab-icon .nexus-dots::before {
+    top: 2px;
+}
+
+.tab-icon .nexus-dots::after {
+    bottom: 2px;
+}
+
+.tab-icon .quantum-symbol {
+    width: 30px;
+    height: 30px;
+}
+
+.tab-icon .quantum-atom {
+    width: 6px;
+    height: 6px;
+    background: var(--white);
+}
+
+.tab-icon .quantum-orbit {
+    width: 20px;
+    height: 10px;
+    border: 1px solid var(--white);
+}
+
+.tab-icon .quantum-orbit::after {
+    width: 20px;
+    height: 10px;
+    border: 1px solid var(--white);
+}
+
+.tab-icon .quantum-particles::before,
+.tab-icon .quantum-particles::after {
+    width: 2px;
+    height: 2px;
+    background: var(--white);
+}
+
+.tab-icon .quantum-particles::before {
+    top: 4px;
+    right: 6px;
+}
+
+.tab-icon .quantum-particles::after {
+    bottom: 4px;
+    left: 6px;
+}
+
+.tab-icon .neural-symbol {
+    width: 30px;
+    height: 30px;
+}
+
+.tab-icon .neural-nodes::before,
+.tab-icon .neural-nodes::after {
+    width: 5px;
+    height: 5px;
+    background: var(--white);
+}
+
+.tab-icon .neural-nodes::before {
+    top: 6px;
+    left: 4px;
+}
+
+.tab-icon .neural-nodes::after {
+    bottom: 6px;
+    right: 4px;
+}
+
+.tab-icon .neural-connections {
+    width: 3px;
+    height: 3px;
+    background: var(--white);
+}
+
+.tab-icon .neural-connections::before,
+.tab-icon .neural-connections::after {
+    width: 1px;
+    height: 8px;
+    background: var(--white);
+}
+
+.tab-icon .neural-connections::before {
+    top: -6px;
+    left: 1px;
+}
+
+.tab-icon .neural-connections::after {
+    bottom: -6px;
+    right: 1px;
+}
+
+.tab-icon .vision-symbol {
+    width: 30px;
+    height: 30px;
+}
+
+.tab-icon .vision-eye {
+    width: 16px;
+    height: 10px;
+    border: 1px solid var(--white);
+}
+
+.tab-icon .vision-lens {
+    width: 6px;
+    height: 6px;
+    background: var(--white);
+}
+
+.tab-icon .vision-scan {
+    height: 1px;
+    background: var(--white);
+}
+
+.tab-icon .synapse-symbol {
+    width: 30px;
+    height: 30px;
+}
+
+.tab-icon .synapse-cloud {
+    width: 14px;
+    height: 8px;
+    background: var(--white);
+    top: 8px;
+}
+
+.tab-icon .synapse-cloud::before,
+.tab-icon .synapse-cloud::after {
+    background: var(--white);
+}
+
+.tab-icon .synapse-cloud::before {
+    width: 6px;
+    height: 6px;
+    top: -3px;
+    left: 2px;
+}
+
+.tab-icon .synapse-cloud::after {
+    width: 5px;
+    height: 5px;
+    top: -2px;
+    right: 3px;
+}
+
+.tab-icon .synapse-data {
+    bottom: 6px;
+    width: 8px;
+    height: 3px;
+    background: var(--white);
+}
+
+.tab-icon .synapse-flow {
+    top: 14px;
+    width: 1px;
+    height: 4px;
+    background: var(--white);
+}
+
+.tab-icon .apex-symbol {
+    width: 30px;
+    height: 30px;
+}
+
+.tab-icon .apex-robot {
+    width: 10px;
+    height: 12px;
+    background: var(--white);
+    top: 6px;
+}
+
+.tab-icon .apex-robot::before {
+    width: 6px;
+    height: 6px;
+    background: var(--white);
+    top: -4px;
+}
+
+.tab-icon .apex-gears {
+    bottom: 4px;
+    width: 5px;
+    height: 5px;
+    border: 1px solid var(--white);
+}
+
+.tab-icon .apex-gears::before {
+    width: 3px;
+    height: 3px;
+    border: 1px solid var(--white);
+    top: -6px;
+    right: -4px;
+}
+
+.tab-icon .apex-arms {
+    top: 10px;
+    height: 1px;
+    background: var(--white);
+}
+
+.tab-icon .apex-arms::before,
+.tab-icon .apex-arms::after {
+    width: 3px;
+    height: 1px;
+    background: var(--white);
+}
+
+.tab-icon .apex-arms::before {
+    left: -2px;
+}
+
+.tab-icon .apex-arms::after {
+    right: -2px;
+}
+
 .brand-name {
     color: var(--dark-gray);
     margin-bottom: 0.5rem;
@@ -982,30 +1231,37 @@ p {
     padding: 1.5rem 0;
     background: var(--white);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.6s ease-out;
     border-bottom: none;
 }
 
 .tab-header:hover {
     background: var(--white);
+    transform: translateY(-8px);
 }
 
 .tab-header.active {
     background: var(--white);
 }
 
+.tab-header.active:hover {
+    transform: translateY(-8px);
+}
+
 .tab-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin-right: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    background: #0E0E0E;
+    border-radius: 8px;
 }
 
 .tab-title {
-    color: var(--primary-blue);
+    color: #0E0E0E;
     font-size: 1.8rem;
     margin: 0;
     font-family: var(--heading-font);
@@ -1061,7 +1317,7 @@ p {
 /* About Section */
 .about {
     padding: 6rem 0;
-    background: var(--white);
+    background: #0E0E0E;
 }
 
 .about-content {
@@ -1071,10 +1327,16 @@ p {
     align-items: center;
 }
 
+.about .section-title {
+    color: var(--white);
+}
+
 .about-description {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
+    color: var(--white);
+    opacity: 0.9;
 }
 
 .about-values {
@@ -1084,13 +1346,12 @@ p {
 }
 
 .value-item h4 {
-    color: var(--primary-blue);
+    color: var(--accent-gold);
     margin-bottom: 0.5rem;
 }
 
-
 .value-item p {
-    color: var(--dark-gray);
+    color: var(--white);
     opacity: 0.8;
     margin: 0;
 }
@@ -1124,8 +1385,8 @@ p {
 /* Contact Section */
 .contact {
     padding: 6rem 0;
-    background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(55, 70, 82, 0.9) 100%);
-    color: var(--white);
+    background: var(--white);
+    color: var(--dark-gray);
 }
 
 .contact-content {
@@ -1135,14 +1396,14 @@ p {
 }
 
 .contact .section-title {
-    color: var(--white);
+    color: var(--primary-blue);
 }
 
 .contact-description {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .contact-methods {
@@ -1152,20 +1413,21 @@ p {
 }
 
 .contact-method h4 {
-    color: var(--white);
+    color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
 
 .contact-method p {
     margin: 0;
     opacity: 0.8;
+    color: var(--dark-gray);
 }
 
 .form {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--light-blue);
     padding: 2rem;
     border-radius: var(--border-radius-lg);
-    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
 }
 
 .form-group {
@@ -1175,23 +1437,51 @@ p {
 .form-input {
     width: 100%;
     padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--neutral-gray);
     border-radius: var(--border-radius);
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
+    background: var(--white);
+    color: var(--dark-gray);
     font-family: var(--font-family);
     font-size: 1rem;
     transition: var(--transition);
 }
 
 .form-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(55, 65, 81, 0.6);
 }
 
 .form-input:focus {
     outline: none;
-    border-color: var(--accent-teal);
-    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-blue);
+    background: var(--white);
+}
+
+/* Visual Section */
+.visual-section {
+    padding: 0;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.visual-section-2 {
+    padding: 0;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.visual-container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* Footer */
